@@ -1,7 +1,8 @@
 package com.jeeapp.evaluationstagev2.controllers;
 
-import com.jeeapp.evaluationstagev2.model.entities.Evaluation;
-import com.jeeapp.evaluationstagev2.services.EvaluationService;
+
+import com.jeeapp.evaluationstagev2.model.entities.Competence;
+import com.jeeapp.evaluationstagev2.services.CompetenceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,33 +12,33 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/evaluations/simple")
-public class EvaluationController {
+@RequestMapping("/api/competences")
+public class CompetenceController {
     @Autowired
-    private EvaluationService service;
+    private CompetenceService service;
 
     @GetMapping
-    public List<Evaluation> getAll() {
+    public List<Competence> getAll() {
         return service.findAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Evaluation> getById(@PathVariable Long id) {
+    public ResponseEntity<Competence> getById(@PathVariable Long id) {
         return service.findById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public Evaluation create(@RequestBody Evaluation e) {
-        return service.save(e);
+    public Competence create(@RequestBody Competence c) {
+        return service.save(c);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Evaluation> update(@PathVariable Long id, @RequestBody Evaluation e) {
+    public ResponseEntity<Competence> update(@PathVariable Long id, @RequestBody Competence c) {
         return service.findById(id).map(existing -> {
-            e.setId(id);
-            return ResponseEntity.ok(service.save(e));
+            c.setId(id);
+            return ResponseEntity.ok(service.save(c));
         }).orElse(ResponseEntity.notFound().build());
     }
 

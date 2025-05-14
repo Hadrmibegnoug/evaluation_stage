@@ -1,7 +1,7 @@
 package com.jeeapp.evaluationstagev2.services;
 
-import com.jeeapp.evaluationstagev2.model.entities.Stage;
-import com.jeeapp.evaluationstagev2.repositories.StageRepository;
+import com.jeeapp.evaluationstagev2.model.entities.Evaluation;
+import com.jeeapp.evaluationstagev2.repositories.EvaluationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,20 +9,20 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class StageService {
+public class EvaluationService {
     @Autowired
-    private StageRepository repository;
+    private EvaluationRepository repository;
 
-    public List<Stage> findAll() {
+    public List<Evaluation> findAll() {
         return repository.findAll();
     }
 
-    public Optional<Stage> findById(Long id) {
+    public Optional<Evaluation> findById(Long id) {
         return repository.findById(id);
     }
 
-    public Stage save(Stage stage) {
-        return repository.save(stage);
+    public Evaluation save(Evaluation e) {
+        return repository.save(e);
     }
 
     public void deleteById(Long id) {
