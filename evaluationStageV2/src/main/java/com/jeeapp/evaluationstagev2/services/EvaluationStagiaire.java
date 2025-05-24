@@ -137,4 +137,26 @@ public class EvaluationStagiaire {
         // 8. Retour DTO
         return ResponseEntity.ok(EvaluationDto.toDto(appreciation));
     }
+
+    public List<EvaluationDto> getAllEvaluationsFull() {
+        List<Appreciation> appreciations = appreciationRepository.findAll();
+
+        return appreciations.stream()
+                .map(appreciation -> {
+                    // on récupère les évaluations et compétences ici
+                    List<Evaluation> evaluations = evaluationRepository.findByAppreciation(appreciation);
+                    List<Competence> competences = competenceRepository.findByAppreciation(appreciation);
+                    competences.forEach(comp -> {
+                        List<Categorie> categories = categorieRepository.findByCompetence(comp);
+                        comp.setCategories(categories);
+                    });
+                    appreciation.setEvaluations(evaluations);
+                    appreciation.setCompetences(competences);
+                    return EvaluationDto.toDto(appreciation);
+                })
+                .collect(Collectors.toList());
+    }
+
+
+
 }

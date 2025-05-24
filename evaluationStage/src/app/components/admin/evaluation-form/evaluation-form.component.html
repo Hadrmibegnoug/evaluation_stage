@@ -1,0 +1,344 @@
+<div class="main">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="section">
+      <label><strong>Informations Stagiaire</strong></label>
+      <div class="form-field">
+        <label for="nom">nom</label>
+        <input type="text" id="nom" name="nom" formControlName="nom" placeholder="Nom" />
+      </div>
+      <div class="form-field">
+        <label for="prenom">prenom</label>
+        <input type="text" id="prenom" name="prenom" formControlName="prenom" placeholder="Prénom" />
+      </div>
+      <div class="form-field">
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" formControlName="email" placeholder="Email" />
+      </div>
+      <div class="form-field">
+        <label for="institution">institution</label>
+        <input type="text" id="institution" name="institution" formControlName="institution" placeholder="Institution" />
+      </div>
+    </div>
+    <div class="section">
+      <label><strong>Informations Tuteur</strong></label>
+      <div class="form-field">
+        <label for="nomTuteur">nom</label>
+        <input type="text" id="nomTuteur" name="nomTuteur" formControlName="nomTuteur" placeholder="Nom Tuteur" />
+      </div>
+      <div class="form-field">
+        <label for="prenomTuteur">prenom</label>
+        <input type="text" id="prenomTuteur" name="prenomTuteur" formControlName="prenomTuteur" placeholder="Prénom Tuteur" />
+      </div>
+      <div class="form-field">
+        <label for="emailTuteur">email</label>
+        <input type="email" id="emailTuteur" name="emailTuteur" formControlName="emailTuteur" placeholder="Email Tuteur" />
+      </div>
+      <div class="form-field">
+        <label for="entreprise">entreprise</label>
+        <input type="text" id="entreprise" name="entreprise" formControlName="entreprise" placeholder="Entreprise" />
+      </div>
+    </div>
+    <div class="section">
+      <div class="form-field">
+        <label for="description">THEME DU PROJET PRINCIPAL CONFIE A L'ETUDIANT(E)</label>
+        <input type="text" id="description" name="description" formControlName="description" placeholder="Description" />
+      </div>
+      <div class="form-field">
+        <label for="objectif">OBJECTIFS ASSIGNES A L'ETUDIANT(E)</label>
+        <input type="text" id="objectif" name="objectif" formControlName="objectif" placeholder="Objectif" />
+      </div>
+      <div class="form-field">
+        <label for="periode">Période du stage, du: </label>
+        <input formControlName="dateDebut" type="date" name="dateDebut" formControlName="dateDebut"/><br>
+        <label for="periode">au: </label>
+        <input formControlName="dateFin" type="date" name="dateFin" formControlName="dateFin"/>
+      </div>
+    </div>
+    <div class="section">
+      <label><strong>APPRECIATION GLOBALES SUR L'ETUDIANT(E)</strong></label>
+      <div class="form-field">
+        <label><strong>Implication dans ses activités</strong></label><br />
+        <mat-radio-group formControlName="implication" aria-label="Select an option">
+          <mat-radio-button id="imparesseux" value="Paresseux">Paresseux</mat-radio-button>
+          <mat-radio-button id="imjnessc" value="Le juste nécessaire">Le juste nécessaire</mat-radio-button>
+          <mat-radio-button id="imbonne" value="Bonne">Bonne</mat-radio-button>
+          <mat-radio-button id="imtresf" value="Très forte">Très forte</mat-radio-button>
+          <mat-radio-button id="imdp" value="Dépasse ses objectifs">Dépasse ses objectifs</mat-radio-button>
+        </mat-radio-group>
+
+        <label><strong>OUVERTURES AUX AUTRES</strong></label><br />
+        <mat-radio-group formControlName="ouverture" aria-label="Select an option">
+          <mat-radio-button value="Isole(e) ou en opposition">Isole(e) ou en opposition</mat-radio-button>
+          <mat-radio-button value="Renferme(e) ou obtus">Renferme(e) ou obtus</mat-radio-button>
+          <mat-radio-button value="Bonne">Bonne</mat-radio-button>
+          <mat-radio-button value="Très forte">Très forte</mat-radio-button>
+          <mat-radio-button value="Dépasse ses Excellente">Excellente</mat-radio-button>
+        </mat-radio-group>
+
+        <label><strong>QUALITE DE SES "PRODUCTIONS"</strong></label><br />
+        <mat-radio-group formControlName="qualite" aria-label="Select an option">
+          <mat-radio-button value="Mediocre">Mediocre</mat-radio-button>
+          <mat-radio-button value="Acceptable">Acceptable</mat-radio-button>
+          <mat-radio-button value="Bonne">Bonne</mat-radio-button>
+          <mat-radio-button value="Très forte">Très forte</mat-radio-button>
+          <mat-radio-button value="Très professionnlle">Très professionnlle</mat-radio-button>
+        </mat-radio-group>
+
+        <label><strong>OBSERVATIONS SUR L'ENSEMBLE DU TRAVAIL ACCOMPLI</strong></label><br />
+        <input type="text" id="observation" name="observation" formControlName="observation" placeholder="observation" />
+        <div class="form-field">
+          <label id="compEtd"><strong>EVALUATIONS DES COMPETENCES DE L'ETUDIANT(E)</strong></label><br />
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>NA</th>
+                <th>Debutant</th>
+                <th>Autonome</th>
+                <th>Autonom+</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Etre capacle d'analyse et de synthèse</td>
+                <td><input type="radio" formControlName="connaissanceE" value="NA" /></td>
+                <td><input type="radio" formControlName="connaissanceE" value="Debutant" /></td>
+                <td><input type="radio" formControlName="connaissanceE" value="Autonome" /></td>
+                <td><input type="radio" formControlName="connaissanceE" value="Autonom+" /></td>
+              </tr>
+              <tr>
+                <td>Etre capable de proposer des methodes et des axes de travail</td>
+                <td><input type="radio" formControlName="qualiteTravail" value="NA" /></td>
+                <td><input type="radio" formControlName="qualiteTravail" value="Debutant" /></td>
+                <td><input type="radio" formControlName="qualiteTravail" value="Autonome" /></td>
+                <td><input type="radio" formControlName="qualiteTravail" value="Autonom+" /></td>
+              </tr>
+              <tr>
+                <td>Etre capable de faire adherer les acteurs</td>
+                <td><input type="radio" formControlName="respectDelais" value="NA" /></td>
+                <td><input type="radio" formControlName="respectDelais" value="Debutant" /></td>
+                <td><input type="radio" formControlName="respectDelais" value="Autonome" /></td>
+                <td><input type="radio" formControlName="respectDelais" value="Autonom+" /></td>
+              </tr>
+              <tr>
+                <td>Etre capable de s'autoevaluer</td>
+                <td><input type="radio" formControlName="qualiteCommunication" value="NA" /></td>
+                <td><input type="radio" formControlName="qualiteCommunication" value="Debutant" /></td>
+                <td><input type="radio" formControlName="qualiteCommunication" value="Autonome" /></td>
+                <td><input type="radio" formControlName="qualiteCommunication" value="Autonom+" /></td>
+              </tr>
+              <tr>
+                <td>Etre capable d'identifier des poblemes complexes</td>
+                <td><input type="radio" formControlName="respectDelaisE" value="NA" /></td>
+                <td><input type="radio" formControlName="respectDelaisE" value="Debutant" /></td>
+                <td><input type="radio" formControlName="respectDelaisE" value="Autonome" /></td>
+                <td><input type="radio" formControlName="respectDelaisE" value="Autonom+" /></td>
+              </tr>
+          </table>
+          <div class="form-field">
+            <label for="noteCompInd"><strong>Note pour evaluer les competences liees a l'individu:</strong></label>
+            <input type="text" id="noteCompInd" name="noteCompInd" formControlName="noteCompInd" placeholder="" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label id="compEtd"><strong>Compétences liées à l'entreprise (cocher les cases)</strong></label><br />
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>NA</th>
+                <th>Debutant</th>
+                <th>Autonome</th>
+                <th>Autonom+</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Etre capacle d'analyse le fonctionnement de l'entreprise d'accueil</td>
+                <td><input type="radio" formControlName="connaissanceEA" value="NA" /></td>
+                <td><input type="radio" formControlName="connaissanceEA" value="Debutant" /></td>
+                <td><input type="radio" formControlName="connaissanceEA" value="Autonome" /></td>
+                <td><input type="radio" formControlName="connaissanceEA" value="Autonom+" /></td>
+              </tr>
+              <tr>
+                <td>Etre capable d'analyser la démarche projet, et d'organiser et de structurer un projet</td>
+                <td><input type="radio" formControlName="qualiteTravailEA" value="NA" /></td>
+                <td><input type="radio" formControlName="qualiteTravailEA" value="Debutant" /></td>
+                <td><input type="radio" formControlName="qualiteTravailEA" value="Autonome" /></td>
+                <td><input type="radio" formControlName="qualiteTravailEA" value="Autonom+" /></td>
+              </tr>
+              <tr>
+                <td>Etre capable d'apprendre à déceler et à comprendre la politique environnementale de l'entreprise</td>
+                <td><input type="radio" formControlName="respectDelaisEA" value="NA" /></td>
+                <td><input type="radio" formControlName="respectDelaisEA" value="Debutant" /></td>
+                <td><input type="radio" formControlName="respectDelaisEA" value="Autonome" /></td>
+                <td><input type="radio" formControlName="respectDelaisEA" value="Autonom+" /></td>
+              </tr>
+              <tr>
+                <td>Etre capable de rechercher, de sélectionner l'information nécessaire à ses activités</td>
+                <td><input type="radio" formControlName="qualiteCommunicationEA" value="NA" /></td>
+                <td><input type="radio" formControlName="qualiteCommunicationEA" value="Debutant" /></td>
+                <td><input type="radio" formControlName="qualiteCommunicationEA" value="Autonome" /></td>
+                <td><input type="radio" formControlName="qualiteCommunicationEA" value="Autonom+" /></td>
+              </tr>
+          </table>
+          <div class="form-field">
+            <label for="noteCompInd"><strong>Note pour evaluer les competences liees a l'entreprise</strong></label>
+            <input type="text" id="noteCompInd" name="noteCompInd" formControlName="noteCompEnt" placeholder="" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label id="compEtd"><strong>Compétences scientifiques et techniques (cocher les cases)</strong></label><br />
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>NA</th>
+                <th>Debutant</th>
+                <th>Autonome</th>
+                <th>Autonom+</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Etre capacle d'assurer la conception préliminaire de produits /services/processus/usages</td>
+                <td><input type="radio" formControlName="prelim" value="NA" /></td>
+                <td><input type="radio" formControlName="prelim" value="Debutant" /></td>
+                <td><input type="radio" formControlName="prelim" value="Autonome" /></td>
+                <td><input type="radio" formControlName="prelim" value="Autonom+" /></td>
+              </tr>
+          </table>
+          <div class="form-field">
+            <label for="noteCompInd"><strong>Note pour evaluer les competences scientifiques et techniques, dont métier</strong></label>
+            <input type="text" id="noteCompInd" name="noteCompInd" formControlName="noteCompScTec" placeholder="" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label id="compEtd"><strong>Compétences spécifiques métier à ajouter selon besoin)</strong></label><br />
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Compétence</th>
+                <th>Evaluation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><input type="text" formControlName="connaissance1" name="comEv1" /></td>
+                <td><input type="text" formControlName="connaissance2" name="EvVal1"/></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><input type="text" name="connaissance3" formControlName="comEv2" /></td>
+                <td><input type="text" name="connaissance4" formControlName="EvVal2"/></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><input type="text" name="connaissance5" formControlName="comEv3" /></td>
+                <td><input type="text" name="connaissance6" formControlName="EvVal3"/></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><input type="text" name="connaissance7" formControlName="comEv4" /></td>
+                <td><input type="text" name="connaissance8" formControlName="EvVal4"/></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><input type="text" name="connaissance9" formControlName="comEv5" /></td>
+                <td><input type="text" name="connaissance10"formControlName="EvVal5"/></td>
+              </tr>
+          </table>
+          <div class="form-field">
+            <label for="noteCompInd"><strong>Note pour evaluer les competences spécifiques métiers:</strong></label>
+            <input type="text" id="noteCompInd" name="noteCompInd" formControlName="noteCompSpM" placeholder="" />
+          </div>
+        </div>
+      </div>
+      <button type="submit" mat-flat-button>Envoyer</button>
+    </div>
+  </form>
+</div>
+
+<!-- <h3>Informations Stagiaire</h3>
+  <input formControlName="nom" placeholder="Nom" />
+  <input formControlName="prenom" placeholder="Prénom" />
+  <input formControlName="email" placeholder="Email" />
+  <input formControlName="institution" placeholder="Institution" />
+
+  <h3>Informations Tuteur</h3>
+  <input formControlName="nom" placeholder="Nom Tuteur" />
+  <input formControlName="prenom" placeholder="Prénom Tuteur" />
+  <input formControlName="email" placeholder="Email Tuteur" />
+  <input formControlName="entreprise" placeholder="Entreprise" />
+
+  <h3>Stage</h3>
+  <input formControlName="description" placeholder="Description" />
+  <input formControlName="objective" placeholder="Objectif" />
+  <input formControlName="entreprise" placeholder="Entreprise" />
+
+  <h3>Période</h3>
+  <input formControlName="dateDebut" type="date" />
+  <input formControlName="dateFin" type="date" />
+
+  <h3>Appréciation générale</h3>
+  <input formControlName="appreciationName" placeholder="Appréciation" />
+
+  <h3>Évaluations</h3>
+  <div formArrayName="evaluations" *ngFor="let ev of evaluations.controls; let i=index">
+    <input [formControlName]="i" placeholder="Catégorie" />
+    <input [formControlName]="i" placeholder="Valeur" />
+  </div>
+  <button type="button" (click)="addEvaluation()">Ajouter Évaluation</button>
+
+  <h3>Compétences</h3>
+  <div formArrayName="competences" *ngFor="let comp of competences.controls; let i=index">
+    <input [formControlName]="i" placeholder="Intitulé" />
+    <input [formControlName]="i" placeholder="Note" />
+    <div formArrayName="categories">
+      catégories ici
+    </div>
+    <button type="button" (click)="addCategorie(i)">Ajouter Catégorie</button>
+  </div>
+  <button type="button" (click)="addCompetence()">Ajouter Compétence</button>
+
+  <button type="submit">Envoyer</button>
+ -->
+
+
+
+
+ <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"></table> -->
+                    <!-- Position Column -->
+                    <!-- <ng-container matColumnDef="position">
+                      <th mat-header-cell *matHeaderCellDef></th>
+                      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                    </ng-container> -->
+
+                    <!-- Name Column -->
+                    <!-- <ng-container matColumnDef="name">
+                      <th mat-header-cell *matHeaderCellDef>NA</th>
+                      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container> -->
+
+                    <!-- Weight Column -->
+                    <!-- <ng-container matColumnDef="weight">
+                      <th mat-header-cell *matHeaderCellDef>Debutant</th>
+                      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                    </ng-container> -->
+
+                    <!-- Symbol Column -->
+                    <!-- <ng-container matColumnDef="symbol">
+                      <th mat-header-cell *matHeaderCellDef>Autonome</th>
+                      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="autonom">
+                      <th mat-header-cell *matHeaderCellDef>Autonome+</th>
+                      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->

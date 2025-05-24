@@ -16,9 +16,9 @@
       <td>{{ tuteur.email }}</td>
       <td>{{tuteur.entreprise}}</td>
       <td>
-        <button (click)="editTuteur(tuteur.id)" class="btn btn-primary m-1" style="color: white; background: #012a5b; border: none;">Modifier</button>
-        <button (click)="deleteTuteur(tuteur.id)" class="btn btn-danger m-1" style="color: white; background: #5b0401; border: none;">Supprimer</button>
-        <button (click)="detailsTuteur(tuteur.id)" class="btn btn-info" style="color: white; background: #095b01; border: none;">Details</button>
+        <button (click)="editTuteur(tuteur.id!)" class="btn btn-primary m-1" style="color: white; background: #012a5b; border: none;">Modifier</button>
+        <button (click)="deleteTuteur(tuteur.id!)" class="btn btn-danger m-1" style="color: white; background: #5b0401; border: none;">Supprimer</button>
+        <button (click)="detailsTuteur(tuteur.id!)" class="btn btn-info" style="color: white; background: #095b01; border: none;">Details</button>
       </td>
     </tr>
   </tbody>

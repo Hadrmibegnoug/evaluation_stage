@@ -1,1 +1,58 @@
-
+<div class="main">
+  <form action="">
+    <mat-form-field class="form-field">
+      <mat-label for="nom">Nom du stagiaire</mat-label>
+      <input matInput type="text" id="nom" name="nom"  required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label for="prenom">Prenom du stagiaire</mat-label>
+      <input matInput type="text" id="prenom" name="prenom"  required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label for="entreprise">Nom de l'entreprise</mat-label>
+      <input matInput type="text" id="entreprise" name="entreprise"  required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label for="nomt">Nom du tuteur</mat-label>
+      <input matInput type="text" id="nomTuteur" name="nomTuteur"  required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label for="prenomt">Prenom du tuteur</mat-label>
+      <input matInput type="text" id="prenomTuteur" name="prenomTuteur"  required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label for="dateDebut">Date de début</mat-label>
+      <input matInput type="text" id="dateDebut" name="dateDebut"  required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label for="dateFin">Date de fin</mat-label>
+      <input matInput type="text" id="dateFin" name="dateFin"  required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label for="themepr">THEME DU PROJET PRINCIPAL CONFIE A L'ETUDIANT(E)</mat-label>
+      <input matInput type="text" name="theme" id="them" required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label for="objectif">OBJECTIFS ASSIGNES A L'ETUDIANT(E)</mat-label>
+      <textarea name="objectif" id="objectif"></textarea>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <h4 for="description">APPRECIAITIONS GLOBALES SUR L'ETUDIANT(E)</h4>
+    </mat-form-field>
+    <mat-form-field class="form-field" style="display: flex; margin: 5px">
+      <h6>IMPLICATION DANS SES ACTIVITES</h6>
+      <mat-form-field class="apprCmp">
+        <mat-label for="paresseux">Paresseux</mat-label>
+      <input type="radio" name="paresseux" id="paresseux" class="radio-app">
+      <mat-label for="juste">Le juste necessaire</mat-label>
+      <input type="radio" name="juste" id="juste" class="radio-app">
+      <mat-label for="bonne">Bonne</mat-label>
+      <input type="radio" name="bonne" id="bonne" class="radio-app">
+      <mat-label for="tresBonne">Très Bonne</mat-label>
+      <input type="radio" name="tresBonne" id="tresBonne" class="radio-app">
+      <mat-label for="depasseObjectif">Dépasse ses objectifs</mat-label>
+      <input type="radio" name="depasseObjectif" id="depasseObjectif" class="radio-app">
+      </mat-form-field>
+    </mat-form-field>
+  </form>
+</div>
