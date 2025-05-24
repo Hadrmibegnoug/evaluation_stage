@@ -1,26 +1,26 @@
 export class StageModel {
-  stageId: number;
+  stage_id: number;
   description: string;
-  objectives: string;
   entreprise: string;
+  objective: string;
 
   constructor(
-    stageId: number,
-    description: string,
-    objectives: string,
-    entreprise: string
+    stage_id: number = 0,
+    description: string = '',
+    entreprise: string = '',
+    objective: string = '',
   ) {
-    this.stageId = stageId;
+    this.stage_id = stage_id;
     this.description = description;
-    this.objectives = objectives;
     this.entreprise = entreprise;
+    this.objective = objective;
   }
   static fromJson(json: any): StageModel {
     return new StageModel(
-      json.stageId,
+      json.stage_id,
       json.description,
-      json.objectives,
-      json.entreprise
+      json.entreprise,
+      json.objective
     );
   }
   static fromJsonArray(jsonArray: any[]): StageModel[] {
@@ -28,10 +28,10 @@ export class StageModel {
   }
   static toJson(stage: StageModel): any {
     return {
-      stageId: stage.stageId,
+      stage_id: stage.stage_id,
       description: stage.description,
-      objectives: stage.objectives,
       entreprise: stage.entreprise,
+      objective: stage.objective,
     };
   }
 }

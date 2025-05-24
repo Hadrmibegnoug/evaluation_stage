@@ -1,6 +1,6 @@
 import { Component, computed, HostListener, input, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { TuteurComponent } from "./components/admin/tuteur/tuteur.component";
+import { TuteurComponent } from "./components/admin/tuteurComp/tuteur/tuteur.component";
 import { HeaderComponent } from "./components/shared/header/header.component";
 import { CommonModule } from '@angular/common';
 import { LeftSidebarComponent } from "./components/shared/left-sidebar/left-sidebar.component";

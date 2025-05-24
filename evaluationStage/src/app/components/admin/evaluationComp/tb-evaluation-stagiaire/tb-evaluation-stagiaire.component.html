@@ -1,0 +1,55 @@
+<h2>Liste des évaluations</h2>
+<a routerLink = "/home/evaluationForm" routerLinkActive="active" class="btn btn-success col-md-2 m-2" style="color: white; background: #012a5b; border: none;">Créer</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Stagiaire</th>
+      <th>Institution</th>
+      <th>Tuteur</th>
+      <th>Stage</th>
+      <th>Période</th>
+      <th>Appréciation</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of evaluations; let i = index">
+      <td>{{ e.stagiaire?.prenom }} {{ e.stagiaire?.nom }}</td>
+      <td>{{ e.stagiaire?.institution }}</td>
+      <td>
+        {{ e.tuteur?.prenom }} {{ e.tuteur?.nom }}<br />
+        <small>{{ e.tuteur?.entreprise }}</small>
+      </td>
+      <td>{{ e.stage?.description }}</td>
+      <td>{{ e.periode?.dateDebut }} au {{ e.periode?.dateFin }}</td>
+      <td>{{ e.appreciation?.appreciationName }}</td>
+      <td>
+        <button (click)="toggleDetails(i)">
+          {{ e.showDetails ? 'Cacher' : 'Voir' }} détails
+        </button>
+      </td>
+    </tr>
+    <tr *ngFor="let e of evaluations; let i = index">
+      <td colspan="7" *ngIf="e.showDetails">
+        <div>
+          <h4>Évaluations</h4>
+          <ul>
+            <li *ngFor="let ev of e.evaluations">
+              {{ ev.categorie }} : <strong>{{ ev.valeur }}</strong>
+            </li>
+          </ul>
+
+          <h4>Compétences</h4>
+          <div *ngFor="let comp of e.competences">
+            <strong>{{ comp.intitule }}</strong> (note : {{ comp.note }})
+            <ul>
+              <li *ngFor="let cat of comp.categories">
+                - {{ cat.intitule }} : {{ cat.valeur }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

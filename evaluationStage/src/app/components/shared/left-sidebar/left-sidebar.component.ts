@@ -25,13 +25,13 @@ export class LeftSidebarComponent {
     },
     {
       routeLink: 'stagiaire',
-      icon: 'fal fa-briefcase',
-      label: 'Stages',
+      icon: 'fal fa-user-graduate',
+      label: 'Stagiaires',
     },
     {
       routeLink: 'stage',
-      icon: 'fal fa-user-graduate',
-      label: 'Stagiaires',
+      icon: 'fal fa-briefcase',
+      label: 'Stages',
     },
     // {
     //   routeLink: 'settings',

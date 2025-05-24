@@ -1,0 +1,22 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>DESCRIPTION</th>
+      <th>OBJECTIVE</th>
+      <th>ENTREPRISE</th>
+      <th>ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let stage of stage">
+      <td>{{ stage.description }}</td>
+      <td>{{ stage.objective }}</td>
+      <td>{{ stage.entreprise }}</td>
+      <td>
+        <button (click)="editStage(stage.stage_id)" class="btn btn-primary m-1" style="color: white; background: #012a5b; border: none;">Modifier</button>
+        <button (click)="deleteStage(stage.stage_id)" class="btn btn-danger m-1" style="color: white; background: #5b0401; border: none;">Supprimer</button>
+        <button (click)="detailsStage(stage.stage_id)" class="btn btn-info" style="color: white; background: #095b01; border: none;">Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

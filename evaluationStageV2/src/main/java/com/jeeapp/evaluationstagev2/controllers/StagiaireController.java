@@ -3,6 +3,8 @@ package com.jeeapp.evaluationstagev2.controllers;
 import com.jeeapp.evaluationstagev2.model.entities.Stagiaire;
 import com.jeeapp.evaluationstagev2.services.StagiaireService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,9 +24,8 @@ public class StagiaireController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Stagiaire> getById(@PathVariable Long id) {
-        return service.findById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+        Stagiaire stagiaire = service.getStagiaire(id).getBody();
+        return new ResponseEntity<>(stagiaire, HttpStatus.OK);
     }
 
     @PostMapping
@@ -34,15 +35,13 @@ public class StagiaireController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Stagiaire> update(@PathVariable Long id, @RequestBody Stagiaire s) {
-        return service.findById(id).map(existing -> {
-            s.setId(id);
-            return ResponseEntity.ok(service.save(s));
-        }).orElse(ResponseEntity.notFound().build());
+        Stagiaire stagiaire = service.updateTuteur(id, s).getBody();
+        return new ResponseEntity<>(stagiaire ,HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
-        service.deleteById(id);
-        return ResponseEntity.noContent().build();
+        service.deleteStagiaire(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

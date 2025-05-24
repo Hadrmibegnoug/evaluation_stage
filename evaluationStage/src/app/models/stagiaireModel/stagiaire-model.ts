@@ -6,11 +6,11 @@ export class StagiaireModel {
   institution: string;
 
   constructor(
-    id: number,
-    nom: string,
-    prenom: string,
-    email: string,
-    institution: string
+    id: number = 0,
+    nom: string = '',
+    prenom: string = '',
+    email: string = '',
+    institution: string = ''
   ) {
     this.id = id;
     this.nom = nom;

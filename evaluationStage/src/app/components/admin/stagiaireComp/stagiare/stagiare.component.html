@@ -1,0 +1,25 @@
+<!-- <a routerLink = "/tuteur/createTuteur" routerLinkActive="active" class="btn btn-success col-md-2 m-2" style="color: white; background: #012a5b; border: none;">Créer</a> -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Email</th>
+      <th>Institution</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let stag of stagiaire">
+      <td>{{ stag.nom }}</td>
+      <td>{{ stag.prenom }}</td>
+      <td>{{ stag.email }}</td>
+      <td>{{ stag.institution}}</td>
+      <td>
+        <button (click)="editStagire(stag.id!)" class="btn btn-primary m-1" style="color: white; background: #012a5b; border: none;">Modifier</button>
+        <button (click)="deleteStagire(stag.id!)" class="btn btn-danger m-1" style="color: white; background: #5b0401; border: none;">Supprimer</button>
+        <button (click)="detailsStagire(stag.id!)" class="btn btn-info" style="color: white; background: #095b01; border: none;">Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

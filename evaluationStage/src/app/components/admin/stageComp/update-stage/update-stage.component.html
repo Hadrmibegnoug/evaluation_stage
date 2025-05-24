@@ -1,0 +1,18 @@
+<div class="col-md-8 offset-md-3">
+  <h3 class="text-center">Modification du stage</h3>
+  <form (ngSubmit)="onSubmit()" #stageForm="ngForm">
+    <div class="form-group">
+      <label for="nom">Description</label>
+      <input type="text" id="nom" class="form-control" [(ngModel)]="stage.description" name="description" required>
+    </div>
+    <div class="form-group">
+      <label for="objectives">Objectif</label>
+      <input type="text" id="objectives" class="form-control" [(ngModel)]="stage.objective" name="objectives" required>
+    </div>
+    <div class="form-group">
+      <label for="entreprise">Entreprise</label>
+      <input type="entreprise" id="entreprise" class="form-control" [(ngModel)]="stage.entreprise" name="entreprise" required>
+    </div>
+    <button type="submit" class="btn btn-primary col-md-3 offset-md-2" [disabled]="!stageForm.form.valid">Modifier</button>
+  </form>
+</div>
